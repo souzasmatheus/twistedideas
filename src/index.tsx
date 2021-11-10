@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+import QueryProvider from './providers/QueryProvider';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryProvider>
+      <App />
+    </QueryProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

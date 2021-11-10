@@ -1,3 +1,7 @@
+import ClickableCell from '../ClickableCell'
+
+import useQuery from '../../hooks/useQuery';
+
 import { getYear } from '../../utils/date'
 
 type ListItemProps = {
@@ -8,11 +12,17 @@ type ListItemProps = {
 };
 
 const ListItem = ({id, firstName, lastName, year}: ListItemProps) => {
+  const [, setValue] = useQuery('year')
+
+  const handleYearSelect = () => {
+    setValue(getYear(year).toString())
+  }
+
   return (
     <tr>
       <td>{id}</td>
       <td width='60%'>{firstName} {lastName}</td>
-      <td>{getYear(year)}</td>
+      <ClickableCell type='td' onClick={handleYearSelect} >{getYear(year)}</ClickableCell>
     </tr>
   )
 }
