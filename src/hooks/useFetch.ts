@@ -1,5 +1,7 @@
 import {useState, useCallback} from 'react';
 
+import { handleCorsErrors } from '../utils/api'
+
 type ReturnType<T> = [
   {data: T | null; loading: boolean; error: boolean},
   () => Promise<void>,
@@ -23,9 +25,9 @@ const useFetch = <TData>(url: string): ReturnType<TData> => {
       const res = await fetch(url);
       const parsedData = await res.json();
       setData(parsedData);
-      setLoading(false);
     } catch {
-      setError(true);
+      handleCorsErrors<TData>(url, (res) => setData(res),  () => setError(true))
+    } finally {
       setLoading(false);
     }
   }, [url]);
