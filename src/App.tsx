@@ -17,7 +17,7 @@ type User = {
 
 function App() {
   const [{data, loading, error}, fetch] = useFetch<User[]>(process.env.REACT_APP_API_URL ?? '');
-  const [paramValue] = useQuery('year')
+  const [paramValue, setParamValue] = useQuery('year')
 
   const treatedData = useMemo(() => data?.filter(user => {
     if (paramValue) {
@@ -38,19 +38,29 @@ function App() {
     return <p>ERROR</p>
   }
 
+  const handleClearYear = () => {
+    setParamValue('')
+  }
+
   return (
-    <table>
-      <thead>
-        <ClickableCell type='th' onClick={() => console.log('yay')}>ID</ClickableCell>
-        <ClickableCell type='th' onClick={() => console.log('yay')}>Full name</ClickableCell>
-        <ClickableCell type='th' onClick={() => console.log('yay')}>Year</ClickableCell>
-      </thead>
-      <tbody>
-        {treatedData && treatedData.map(({id, first_name, last_name, year}) => (
-          <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{id, year}}/>
-        ))}
-      </tbody>
-    </table>
+    <>
+      {paramValue && (
+        <button onClick={handleClearYear}>Clear year</button>
+      )}
+      <table>
+        <thead>
+          <ClickableCell type='th' onClick={() => console.log('yay')}>ID</ClickableCell>
+          <ClickableCell type='th' onClick={() => console.log('yay')}>Full name</ClickableCell>
+          <ClickableCell type='th' onClick={() => console.log('yay')}>Year</ClickableCell>
+        </thead>
+        <tbody>
+          
+          {treatedData && treatedData.map(({id, first_name, last_name, year}) => (
+            <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{id, year}}/>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
