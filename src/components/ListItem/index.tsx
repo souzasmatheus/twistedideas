@@ -19,10 +19,10 @@ const ListItem = ({id, firstName, lastName, year}: ListItemProps) => {
   }
 
   return (
-    <tr>
-      <td>{id}</td>
-      <td width='60%'>{firstName} {lastName}</td>
-      <ClickableCell type='td' onClick={handleYearSelect} >{getYear(year)}</ClickableCell>
+    <tr className="whitespace-nowrap">
+      <td className="px-6 py-4 text-sm text-gray-500">{id}</td>
+      <td className="px-6 py-4 text-sm text-gray-500">{firstName} {lastName}</td>
+      <ClickableCell type='td' onClick={handleYearSelect}>{getYear(year)}</ClickableCell>
     </tr>
   )
 }
