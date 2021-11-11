@@ -4,6 +4,7 @@ import { ListItem, ClickableCell } from "./components";
 
 import useFetch from './hooks/useFetch';
 import useQuery from './hooks/useQuery';
+import useSort from './hooks/useSort'
 
 import { getYear } from './utils/date'
 
@@ -25,6 +26,8 @@ function App() {
     }
     return true
   }) ?? [], [paramValue, data])
+
+  const [sortedData, sortBy] = useSort(treatedData)
 
   useEffect(() => {
     fetch();
@@ -49,13 +52,12 @@ function App() {
       )}
       <table>
         <thead>
-          <ClickableCell type='th' onClick={() => console.log('yay')}>ID</ClickableCell>
-          <ClickableCell type='th' onClick={() => console.log('yay')}>Full name</ClickableCell>
-          <ClickableCell type='th' onClick={() => console.log('yay')}>Year</ClickableCell>
+          <ClickableCell type='th' onClick={() => sortBy('id')}>ID</ClickableCell>
+          <ClickableCell type='th' onClick={() => sortBy('first_name')}>Full name</ClickableCell>
+          <ClickableCell type='th' onClick={() => sortBy('year')}>Year</ClickableCell>
         </thead>
         <tbody>
-          
-          {treatedData && treatedData.map(({id, first_name, last_name, year}) => (
+          {sortedData && sortedData.map(({id, first_name, last_name, year}) => (
             <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{id, year}}/>
           ))}
         </tbody>
