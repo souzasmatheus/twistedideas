@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react';
+import React, { FC } from 'react';
 
 type ClickableCellProps = {
   onClick: () => void
@@ -6,7 +6,7 @@ type ClickableCellProps = {
 };
 
 const ClickableCell: FC<ClickableCellProps> = ({ children, onClick, type }) => {
-  const handleClick = (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     onClick();
   };
