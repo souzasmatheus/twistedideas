@@ -60,11 +60,13 @@ function App () {
       )}
       {data &&
         (<table className={`w-1/3 mx-auto ${paramValue ? 'mt-5' : 'mt-20'}`} >
-          <tr className="bg-gray-50">
-            <ClickableCell type='th' onClick={() => sortBy('id')}>ID</ClickableCell>
-            <ClickableCell type='th' onClick={() => sortBy('first_name')}>Full name</ClickableCell>
-            <ClickableCell type='th' onClick={() => sortBy('year')}>Year</ClickableCell>
-          </tr>
+          <thead>
+            <tr className="bg-gray-50">
+              <ClickableCell type='th' onClick={() => sortBy('id')}>ID</ClickableCell>
+              <ClickableCell type='th' onClick={() => sortBy('first_name')}>Full name</ClickableCell>
+              <ClickableCell type='th' onClick={() => sortBy('year')}>Year</ClickableCell>
+            </tr>
+          </thead>
           <tbody className="bg-white">
             {treatedData && treatedData.map(({ id, first_name, last_name, year }) => (
               <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{ id, year }} />
