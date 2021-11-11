@@ -67,7 +67,7 @@ function App () {
           </tr>
           <tbody className="bg-white">
             {treatedData && treatedData.map(({ id, first_name, last_name, year }) => (
-              <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{ id, year }}/>
+              <ListItem key={`list-item-${id}`} firstName={first_name} lastName={last_name} {...{ id, year }} />
             ))}
           </tbody>
         </table>)

@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-const useSort = (data: Array<{[key: string]: any}>): [Array<{[key: string]: any}>, (key: string) => void] => {
-  const [sortedData, setSortedData] = useState<Array<{[key: string]: any}>>(data);
+type DataType = Array<{[key: string]: any}>
+
+const useSort = (data: DataType): [DataType, (key: string) => void] => {
+  const [sortedData, setSortedData] = useState<DataType>(data);
   const lastOrder = useRef<'ASC' | 'DESC'>('ASC');
 
   const getSortedData = useCallback(
@@ -17,7 +19,7 @@ const useSort = (data: Array<{[key: string]: any}>): [Array<{[key: string]: any}
           if (typeof a[sortKey] === 'number') {
             return a[sortKey] - b[sortKey];
           } else {
-            return a[sortKey]?.localeCompare(b[sortKey], undefined, { numeric: true });
+            return a[sortKey]?.localeCompare(b[sortKey]);
           }
         });
         setSortedData([...result]);
@@ -31,7 +33,7 @@ const useSort = (data: Array<{[key: string]: any}>): [Array<{[key: string]: any}
         if (typeof a[sortKey] === 'number') {
           return b[sortKey] - a[sortKey];
         } else {
-          return b[sortKey]?.localeCompare(a[sortKey], undefined, { numeric: true });
+          return b[sortKey]?.localeCompare(a[sortKey]);
         }
       });
       setSortedData([...result]);
