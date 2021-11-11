@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/twistedideas/static/css/main.b11526c6.chunk.css",
-    "main.js": "/twistedideas/static/js/main.c1c4ea14.chunk.js",
-    "main.js.map": "/twistedideas/static/js/main.c1c4ea14.chunk.js.map",
-    "runtime-main.js": "/twistedideas/static/js/runtime-main.8cee13e1.js",
-    "runtime-main.js.map": "/twistedideas/static/js/runtime-main.8cee13e1.js.map",
-    "static/js/2.b0f97baf.chunk.js": "/twistedideas/static/js/2.b0f97baf.chunk.js",
-    "static/js/2.b0f97baf.chunk.js.map": "/twistedideas/static/js/2.b0f97baf.chunk.js.map",
+    "main.css": "/twistedideas/static/css/main.ad47fccd.chunk.css",
+    "main.js": "/twistedideas/static/js/main.b02af3e5.chunk.js",
+    "main.js.map": "/twistedideas/static/js/main.b02af3e5.chunk.js.map",
+    "runtime-main.js": "/twistedideas/static/js/runtime-main.8b8e96eb.js",
+    "runtime-main.js.map": "/twistedideas/static/js/runtime-main.8b8e96eb.js.map",
+    "static/js/2.99920b2b.chunk.js": "/twistedideas/static/js/2.99920b2b.chunk.js",
+    "static/js/2.99920b2b.chunk.js.map": "/twistedideas/static/js/2.99920b2b.chunk.js.map",
     "index.html": "/twistedideas/index.html",
-    "static/css/main.b11526c6.chunk.css.map": "/twistedideas/static/css/main.b11526c6.chunk.css.map",
-    "static/js/2.b0f97baf.chunk.js.LICENSE.txt": "/twistedideas/static/js/2.b0f97baf.chunk.js.LICENSE.txt"
+    "static/css/main.ad47fccd.chunk.css.map": "/twistedideas/static/css/main.ad47fccd.chunk.css.map",
+    "static/js/2.99920b2b.chunk.js.LICENSE.txt": "/twistedideas/static/js/2.99920b2b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8cee13e1.js",
-    "static/js/2.b0f97baf.chunk.js",
-    "static/css/main.b11526c6.chunk.css",
-    "static/js/main.c1c4ea14.chunk.js"
+    "static/js/runtime-main.8b8e96eb.js",
+    "static/js/2.99920b2b.chunk.js",
+    "static/css/main.ad47fccd.chunk.css",
+    "static/js/main.b02af3e5.chunk.js"
   ]
 }
